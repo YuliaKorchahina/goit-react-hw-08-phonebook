@@ -22,6 +22,7 @@ const authSlice = createSlice({
       store.user = payload.user;
       store.token = payload.token;
       store.isLogin = true;
+      console.log(payload);
     },
     [logOut.fulfilled](store) {
       store.user = { name: null, email: null };
