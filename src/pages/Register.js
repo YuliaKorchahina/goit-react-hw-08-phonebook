@@ -2,8 +2,6 @@ import { useDispatch } from 'react-redux';
 import { Form, Formik, Field, ErrorMessage } from 'formik';
 // import * as Yup from 'yup';
 import { register } from 'redux/auth/auth-operations';
-// import { Navigate } from 'react-router-dom';
-// import { useAuth } from 'hooks/useAuth';
 // import PropTypes from 'prop-types';
 
 const initialValues = {
@@ -14,27 +12,14 @@ const initialValues = {
 
 const Register = () => {
   const dispatch = useDispatch();
-  // const isLogin = useAuth;
 
   const onRegister = (values, actions) => {
     dispatch(register(values));
     actions.resetForm();
   };
 
-  // if (isLogin) {
-  //   return <Navigate to="/" />;
-  // }
-
   return (
-    <Formik
-      initialValues={initialValues}
-      // onSubmit={(values, actions) => {
-      //   console.log(values);
-      //   dispatch(register(values));
-      //   actions.resetForm();
-      // }}
-      onSubmit={onRegister}
-    >
+    <Formik initialValues={initialValues} onSubmit={onRegister}>
       <Form>
         <label>
           Name
