@@ -1,7 +1,7 @@
 import NavbarAuth from 'components/NavBarAuth';
 import UserMenu from 'components/UserMenu';
 import { useAuth } from 'hooks/useAuth';
-import Home from 'pages/Home';
+// import Home from 'pages/Home';
 // import { PhonebookPage } from 'pages/PhoneBookPage';
 import { NavLink } from 'react-router-dom';
 
