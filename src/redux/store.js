@@ -27,11 +27,6 @@ const rootReducer = combineReducers({
   filter: filterReducer,
 });
 
-// const persistedTokenReducer = persistReducer(
-//   rootPersistConfig,
-//   rootReducer
-// );
-
 export const store = configureStore({
   reducer: rootReducer,
   middleware: getDefaultMiddleware =>

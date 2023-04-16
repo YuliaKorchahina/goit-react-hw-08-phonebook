@@ -8,6 +8,7 @@ const initialState = {
   isLogin: false,
   loading: false,
   error: null,
+  isRefreshing: false
 };
 const authSlice = createSlice({
   name: 'auth',
@@ -22,7 +23,6 @@ const authSlice = createSlice({
       store.user = payload.user;
       store.token = payload.token;
       store.isLogin = true;
-      console.log(payload);
     },
     [logOut.fulfilled](store) {
       store.user = { name: null, email: null };
@@ -36,6 +36,7 @@ const authSlice = createSlice({
       store.user = payload;
       store.isLogin = true;
       store.isRefreshing = false;
+      store.tokin = payload.token
     },
     [refreshUser.rejected](store) {
       store.isRefreshing = false;
