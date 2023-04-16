@@ -1,11 +1,8 @@
 import NavbarAuth from 'components/NavBarAuth';
 import UserMenu from 'components/UserMenu';
 import { useAuth } from 'hooks/useAuth';
-// import Home from 'pages/Home';
-// import { PhonebookPage } from 'pages/PhoneBookPage';
 import { NavLink } from 'react-router-dom';
-
-// import styles from './navigation.module.scss'
+import Link from '@mui/material/Link';
 
 const NavbarMenu = () => {
   const isLogin = useAuth();
@@ -13,11 +10,11 @@ const NavbarMenu = () => {
   return (
     <nav>
       <div>
-        <NavLink to="/">Home</NavLink>
-        {/* <NavLink to="/contacts">Phonebook</NavLink> */}
-        {/* <NavLink to="/register">Register</NavLink> */}
-        {/* <NavLink to="/login">Login</NavLink> */}
-        {/* {isLogin && <PhonebookPage/>} */}
+        <NavLink to="/">
+          <Link component="button" variant="body2">
+            Home
+          </Link>
+        </NavLink>
         {isLogin ? <UserMenu /> : <NavbarAuth />}
       </div>
     </nav>

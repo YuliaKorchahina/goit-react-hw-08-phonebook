@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
-import { Input } from './FormStyle.styled';
 
 import { selectFilter } from 'redux/contactsBook/filter/filter-selector';
 import { setFilter } from 'redux/contactsBook/filter/filter-slice';
+
+import TextField from '@mui/material/TextField';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -16,10 +17,15 @@ export const Filter = () => {
   return (
     <>
       <h2>Contacts</h2>
-      <label>
-        Find contact by name
-        <Input type="text" name="filter" onChange={onFilter} value={filter} />
-      </label>
+      <TextField
+        id="outlined-basic"
+        label="Find contact by name"
+        variant="outlined"
+        type="text"
+        name="filter"
+        onChange={onFilter}
+        value={filter}
+      />
     </>
   );
 };

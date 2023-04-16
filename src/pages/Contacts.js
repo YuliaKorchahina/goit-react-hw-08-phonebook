@@ -11,6 +11,10 @@ import { Loader } from 'components/Loader';
 
 import toast from 'react-hot-toast';
 
+import Button from '@mui/material/Button';
+
+import DeleteIcon from '@mui/icons-material/Delete';
+
 const getFiltredContacts = (contacts, filterValue) => {
   const normalizedFilter = filterValue.toLocaleLowerCase();
   const filtredData = contacts.filter(({ name }) => {
@@ -38,9 +42,14 @@ export const ContactsList = () => {
         getFiltredContacts(contacts, filter).map(({ id, name, number }) => (
           <li key={id}>
             {name} : {number}{' '}
-            <button type="button" onClick={() => onDelete(id)}>
-              ❌
-            </button>
+            <Button
+              type="button"
+              onClick={() => onDelete(id)}
+              variant="outlined"
+              startIcon={<DeleteIcon />}
+            >
+              Delete
+            </Button>
           </li>
         ))}
     </ol>

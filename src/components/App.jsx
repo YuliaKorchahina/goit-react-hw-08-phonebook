@@ -45,7 +45,7 @@ export const App = () => {
         position="top-center"
         toastOptions={{
           duration: 2500,
-          style: { background: '#F33A6A', color: '#000' },
+          style: { background: '#6497b1', color: '#000' },
         }}
       />
     </Container>

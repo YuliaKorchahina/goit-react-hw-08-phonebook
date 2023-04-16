@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { Form, Formik, Field, ErrorMessage } from 'formik';
-// import * as Yup from 'yup';
 import { logIn } from 'redux/auth/auth-operations';
-// import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const initialValues = {
   email: '',
@@ -39,9 +39,14 @@ const Register = () => {
           autoFocus
           placeholder="Enter password"
         />
-        <button type="submit">
-          <span>Login</span>
-        </button>
+        <Button
+          size="20px"
+          type="submit"
+          variant="contained"
+          endIcon={<ArrowForwardIcon />}
+        >
+          Login
+        </Button>
       </Form>
     </Formik>
   );

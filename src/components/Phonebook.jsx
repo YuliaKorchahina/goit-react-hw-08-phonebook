@@ -10,6 +10,10 @@ import { selectContacts } from 'redux/contactsBook/contacts/contacts-selector';
 
 import toast from 'react-hot-toast';
 
+import Button from '@mui/material/Button';
+import IosShareIcon from '@mui/icons-material/IosShare';
+import Stack from '@mui/material/Stack';
+
 const initialValues = {
   name: '',
   number: '',
@@ -56,6 +60,7 @@ export const Phonebook = () => {
             />
             <ErrorMessage name="name" component="span" />
           </FormField>
+          
           <FormField>
             Number
             <Field
@@ -66,7 +71,15 @@ export const Phonebook = () => {
               required
             />
           </FormField>
-          <button type="submit">Add contact ✅</button>
+          <Stack direction="row" spacing={2}>
+            <Button
+              type="submit"
+              variant="contained"
+              endIcon={<IosShareIcon />}
+            >
+              Add contact
+            </Button>
+          </Stack>
         </Form>
       </Formik>
     </>

@@ -2,7 +2,8 @@ import { useDispatch } from 'react-redux';
 import { Form, Formik, Field, ErrorMessage } from 'formik';
 // import * as Yup from 'yup';
 import { register } from 'redux/auth/auth-operations';
-// import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const initialValues = {
   name: '',
@@ -32,7 +33,7 @@ const Register = () => {
           />
         </label>
         <label>
-          email
+          Email
           <ErrorMessage name="password" component="input" />
         </label>
         <Field
@@ -42,17 +43,22 @@ const Register = () => {
           autoFocus
           placeholder="Enter email"
         />
-        <label>password</label>
+        <label>Password</label>
         <Field
           name="password"
           type="text"
           autoComplete="off"
           autoFocus
-          placeholder="Enter password (min 6 symbols)"
+          placeholder="Password (min 6 symbols)"
         />
-        <button type="submit">
-          <span>Register</span>
-        </button>
+        <Button
+          size="20px"
+          type="submit"
+          variant="contained"
+          endIcon={<ArrowForwardIcon />}
+        >
+          Register
+        </Button>
       </Form>
     </Formik>
   );
